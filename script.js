@@ -3,23 +3,21 @@ const input = require('readline-sync')
 
 // Hero Class
 class HeroType {
-
 	constructor(heroName, heroAge, heroType) {
-        	this.heroName = heroName
-        	this.heroAge = heroAge
-        	this.heroType = heroType.toLowerCase()		// Normalize heroType to lowercase
+		this.heroName = heroName
+		this.heroAge = heroAge
+		this.heroType = heroType.toLowerCase()		// Normalize heroType to lowercase
 		this.attackType = this.determineAttackType()
 	}
-
 
 	determineAttackType() {
 		switch (this.heroType) {
 			case "mago":
-                		return "magia"
+				return "magia"
             		case "guerreiro":
-                		return "espada"
+				return "espada"
             		case "monge":
-                		return "artes marciais"
+				return "artes marciais"
             		case "ninja":
                 		return "shuriken"
             		default:
@@ -27,11 +25,11 @@ class HeroType {
 		}
 	}
 
-
 	toAttack() {
         	if (this.attackType === "INVALID ATTACK!") {
-            		console.log(`- ${this.heroType} - is an INVALID TYPE HERO!`)
-        	} else {
+			console.log(`- ${this.heroType} - is an INVALID TYPE HERO!`)
+        	}
+		else {
             		console.log(`O ${this.heroType} atacou usando ${this.attackType}.`)
         	}
     	}
@@ -61,5 +59,3 @@ function main() {
 
 // Start the program
 main()
-
-
